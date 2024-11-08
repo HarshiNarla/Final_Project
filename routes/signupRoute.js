@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const router = express.Router();
 
-router.post('/', async (req, res) => {
+router.post('/signup', async (req, res) => {
   // Destructure the incoming request body
   const { firstName, lastName, signupEmail, signupPassword, phone, location, favoriteDestination } = req.body;
 
