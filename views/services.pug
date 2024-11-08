@@ -1,0 +1,52 @@
+extends layout 
+
+block content-head 
+    title Services - Tourist Assistance
+    link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet")
+    link(rel="stylesheet", href="/assets/css/services.css")
+
+block content-body
+    section.services-section
+      h1 Our Services
+      .grid-container
+        // Travel Planning Service
+        a.service-link(href="travel-planning.html")
+          .service-item
+            img(src="./assets/img/flights.jpeg" alt="Flight Booking")
+            h2 Flight Booking
+            p We offer user-friendly environment where you can search all the flights from any airport to any other airport all over India. Then you can book your tickets accordingly.
+        
+        // Accommodation Booking Service
+        a.service-link(href="accommodation.html")
+          .service-item
+            img(src="./assets/img/restaurants.jpeg" alt="Restaurants")
+            h2 Restaurants
+            p You can search all the restaurants available in a particular city. You can search across India and view them on maps also. Note: Only cities, not villages.
+
+        // Transportation Service
+        a.service-link(href="transportation.html")
+          .service-item
+            img(src="./assets/img/accomadation.jpeg" alt="Accommodation")
+            h2 Accommodation
+            p You can search all the accommodation available in hotels in a particular place all over India. You can book them as well. Not applicable in villages.
+
+        // Local Guides Service
+        a.service-link(href="local-guides.html")
+          .service-item
+            img(src="./assets/img/guides.jpeg" alt="Local Guides")
+            h2 Local Guides
+            p Discover local tours and experiences with our expert guides. You can book them by checking details like experience, languages known, rating, etc.
+
+        // Famous Destinations Service
+        a.service-link(href="restaurants.html")
+          .service-item
+            img(src="./assets/img/destinations.jpeg" alt="Famous destinations")
+            h2 Famous Destinations
+            p Famous destinations in India with information about them for better understanding. This helps you visit famous spots without prior knowledge.
+
+        // Event Information Service
+        a.service-link(href="events.html")
+          .service-item
+            img(src="./assets/img/maps.png" alt="Maps")
+            h2 Maps
+            p You can see the India map with our famous cities, and when you click on a city, you can see famous places in that city with their location on the map.

@@ -1,0 +1,32 @@
+extends layout
+
+block content-head
+  title Flight Details
+
+block content-body
+  section.flight-details
+    h1 Flight Information
+
+    .flight-card-container
+      if flights.length > 0 
+        each flight in flights
+          .flight-card
+            .flight-header
+              h2 Flight Number: #{flight.flight.number}
+              p Airline: #{flight.flight.airline.name}
+              p From: #{flight.flight.departure.airport} To: #{flight.flight.arrival.airport}
+            .flight-body
+              p Departure: #{flight.flight.departure.scheduled}
+              p Arrival: #{flight.flight.arrival.scheduled}
+              p Price: $#{flight.price}
+            .flight-footer
+              a(href="/login") Book 
+      else 
+        .flight-card 
+          h2 No Flights Found
+          p Sorry, no flights match your search for 
+          |
+          strong #{from} to #{to}.
+
+    // Back to search form button
+    a(href="/") Back to Search

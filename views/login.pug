@@ -1,0 +1,30 @@
+extends layout 
+
+block content-head 
+    title Login - Tourist Assistance
+    link(rel="stylesheet", href="/assets/css/login.css")
+
+block content-body
+    main
+      .signup-container
+        h2 Welcome Back! Please log in to continue.
+        form#loginForm(action="/login" method="post")
+          if errorMessage
+            .error-message #{errorMessage}  // Display error message when login fails
+          .form-group
+            label(for="email") Email Address
+            input#email(type="email" name="email" placeholder="Enter email address" required)
+          .form-group
+            label(for="password") Password
+            input#password(type="password" name="password" placeholder="Enter password" required)
+          .remember-forgot
+            .remember-me
+              input#remember(type="checkbox")
+              label(for="remember") Remember Me
+            a.forgot-password(href="#") Forgot Password?
+          button.continue-btn(type="submit") Continue
+        .signup-option
+          | Don't Have An Account? 
+          a.signup-link(href="/signup") Sign Up
+
+    script(src="/assets/js/login.js")

@@ -1,0 +1,27 @@
+extends userLayout 
+
+block content-head 
+    title Flights - Tourist Assistance
+    link(rel="stylesheet", href="/assets/css/flights.css")
+
+block content-body
+    h1 Flights within India
+    form#search-form
+      label(for="from-airport") From:
+      select#from-airport(required)
+        option(value="") Select departure airport
+
+      label(for="to-airport") To:
+      select#to-airport(required)
+        option(value="") Select arrival airport
+
+      label(for="flight-date") Date:
+      input#flight-date(type="date" required)
+
+      button(type="submit") Search Flights
+
+    #loading(style="display: none;") Loading...
+    #error(style="display: none;")
+    #flights-list
+
+    script(src="/assets/js/flights.js")

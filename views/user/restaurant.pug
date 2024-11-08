@@ -1,0 +1,19 @@
+extends userLayout 
+
+block content-head 
+    title Restaurants - Tourist Assistance
+    link(rel="stylesheet", href="/assets/css/Restaurant.css")
+
+block content-body
+    main
+      .container
+        h1 Restaurants in India
+
+        .search-container
+          input(type="text" id="locationSearch" placeholder="Enter city or state")
+          button(onclick="searchRestaurants()") Search
+
+        #loading Searching for restaurants...
+        #restaurantList
+        
+    script(src="/assets/js/Restaurant.js")

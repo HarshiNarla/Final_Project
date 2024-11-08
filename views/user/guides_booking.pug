@@ -1,0 +1,34 @@
+extends userLayout 
+
+block content-head 
+    title Guides_Booking - Tourist Assistance
+    link(href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet")
+    link(rel="stylesheet", href="/assets/css/guides_booking.css")
+
+block content-body
+    .booking-page
+      h2 Booking Details
+      #guideDetails
+
+      form#bookingForm.booking-form
+        fieldset
+          legend Trip Information
+          label(for="numTravelers") Number of Travelers:
+          input#numTravelers(type="number", name="numTravelers", min="1", required)
+
+          label(for="placesToVisit") Places to Visit:
+          input#placesToVisit(type="text", name="placesToVisit", required)
+
+        fieldset
+          legend Traveler Details
+          #memberDetails
+
+          button#addMemberBtn(type="button") Add Member
+
+        .price-display
+          | Total Price: $
+          span#totalPrice 0
+
+        button(type="submit") Submit Booking
+
+    script(src="/assets/js/guides_booking.js") 

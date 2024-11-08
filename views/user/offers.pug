@@ -1,0 +1,67 @@
+extends userLayout 
+
+block content-head 
+    title User Offers - India Tourism
+    link(rel="stylesheet" href="/assets/css/offers.css")
+
+block content-body
+    .container
+      h1 Tourist Assistance in India - Special Offers
+      .offers-container
+        .offer-card
+          h3 20% Off Flights
+          p Book your flight now and get 20% off on your next booking!
+          a.btn(href='#') Learn More
+        .offer-card
+          h3 Free Baggage
+          p Enjoy free checked baggage on all international flights!
+          a.btn(href='#') Learn More
+        .offer-card
+          h3 Last Minute Deals
+          p Find amazing last-minute flight deals and save big!
+          a.btn(href='#') Learn More
+        .offer-card
+          h3 Refer a Friend
+          p Refer a friend and both get discounts on your next flight!
+          a.btn(href='#') Learn More
+        .offer-card
+          h3 Cultural Tour Package
+          p Explore India's rich heritage with our curated cultural tours!
+          a.btn(href='#') Learn More
+        .offer-card
+          h3 Adventure Sports Discount
+          p Get 15% off on adventure sports bookings across India!
+          a.btn(href='#') Learn More
+
+      h2 Frequently Asked Questions
+      .faq-container
+        .faq-item
+          h3 What services does your tourist assistance website offer?
+          p Our website offers a range of services including flight bookings, hotel reservations, tour packages, travel insurance, and 24/7 customer support for tourists visiting India.
+        .faq-item
+          h3 Do I need a visa to visit India?
+          p Most international visitors need a visa to enter India. We can assist you with information about the e-Visa process and requirements for your specific country.
+        .faq-item
+          h3 What are the best times to visit India?
+          p The best time to visit India depends on the region and your preferences. Generally, October to March is considered the most pleasant season for most parts of India.
+        .faq-item
+          h3 Can you help with custom itineraries?
+          p Yes, we offer personalized itinerary planning services to cater to your specific interests and preferences during your visit to India.
+
+      h2 We Value Your Feedback
+      button#feedbackBtn.btn Provide Feedback
+
+      #feedbackOverlay.feedback-overlay
+        .feedback-form
+          span.close-btn#closeBtn ×
+          h2 Your Feedback
+          form#feedbackForm
+            .form-group
+              label(for='email') Email:
+              input#email(type='email' name='email' required)
+            .form-group
+              label(for='comment') Comment:
+              textarea#comment(name='comment' rows='4' required)
+            button(type='submit' class='btn') Submit Feedback
+
+    script(src="/assets/js/offers.js") 

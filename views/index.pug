@@ -1,0 +1,120 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title India Tourism - Home
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css")
+    link(rel="stylesheet" href="/assets/css/index.css")
+
+  body
+    header
+      nav.navbar
+        .logo INDIA
+        ul.nav-items
+          li: a(href="./index", style="color: white; text-decoration: none;", data-translate-key="Flights") Home
+          li: a(href="./plan", style="color: white; text-decoration: none;", data-translate-key="Plan Your Trip") Plan Your Trip
+          li: a(href="./map", style="color: white; text-decoration: none;", data-translate-key="India Map") India Map
+          li: a(href="./about", style="color: white; text-decoration: none;", data-translate-key="About Us") About Us
+          li: a(href="./services", style="color: white; text-decoration: none;", data-translate-key="Services") Services 
+        .nav-buttons
+          button.lang-btn(onclick="toggleLangMenu()") 🌐 EN
+          #lang-menu.lang-menu
+            a(href="#" onclick="changeLanguage('en')") English
+            a(href="#" onclick="changeLanguage('hi')") Hindi
+          a.login-btn(href="https://indianvisaonline.gov.in/") Get Your Visa
+          
+          // Check if the user is logged in
+          if !userId
+            a.login-btn(href="./login") Log In / Sign Up
+          else
+            a(href="/user/dashboard" .after_login) User Dashboard
+            a(href="/user/logout" .after_login) Log Out 
+
+    main
+      // Main content goes here (video, culture, foods, dances)
+       main
+      .video-container
+        img(src="/assets/img/1.png", alt="Video placeholder")
+        .video-overlay
+            h1(data-translate-key="Incredible India") Incredible India
+            p(data-translate-key="Discover the beauty and diversity of India") Discover the beauty and diversity of India.
+
+      // Culture Section
+      section.section#culture
+        h2(data-translate-key="Indian Culture") Indian Culture
+        p(data-translate-key="India boasts one of the world's oldest and most diverse cultures, with traditions that span thousands of years. Each state and region is known for its unique practices, from art and music to festivals and ceremonies.") 
+          | India boasts one of the world's oldest and most diverse cultures, with traditions that span thousands of years. Each state and region is known for its unique practices, from art and music to festivals and ceremonies.
+        img(src="/assets/img/culture.jpg" alt="Indian Culture Image")
+
+      // Foods Section
+      section.section#foods
+        h2(data-translate-key="Famous Foods of India") Famous Foods of India
+        .grid-container
+          .grid
+            .grid-item
+              h3(data-translate-key="North Indian Cuisine") North Indian Cuisine
+              img(src="/assets/img/north.jpeg" alt="North Indian Cuisine")
+              p(data-translate-key="Known for its rich, creamy dishes like Paneer Makhani and Butter Chicken") 
+                | Known for its rich, creamy dishes like Paneer Makhani and Butter Chicken
+            .grid-item
+              h3(data-translate-key="South Indian Cuisine") South Indian Cuisine
+              img(src="/assets/img/south.jpeg" alt="South Indian Cuisine")
+              p(data-translate-key="Famous for its dosas, idlis, and sambars") 
+                | Famous for its dosas, idlis, and sambars
+            .grid-item
+              h3(data-translate-key="East Indian Cuisine") East Indian Cuisine
+              img(src="/assets/img/east.jpeg" alt="East Indian Cuisine")
+              p(data-translate-key="Offers a variety of seafood and sweet dishes like Rasgulla") 
+                | Offers a variety of seafood and sweet dishes like Rasgulla
+            .grid-item
+              h3(data-translate-key="West Indian Cuisine") West Indian Cuisine
+              img(src="/assets/img/west.jpeg" alt="West Indian Cuisine")
+              p(data-translate-key="Includes spicy curries and snacks like Dhokla and Vada Pav") 
+                | Includes spicy curries and snacks like Dhokla and Vada Pav
+          button.scroll-btn.left(onclick="scrollLeft()") &#9664;
+          button.scroll-btn.right(onclick="scrollRight()") &#9654;
+
+      section.section#dances
+        h2(data-translate-key="Traditional Dances of India") Traditional Dances of India
+        .grid-container
+          .grid
+            .grid-item
+              h3(data-translate-key="Bharatanatyam") Bharatanatyam
+              p(data-translate-key="A classical dance form from Tamil Nadu, Bharatanatyam is known for its grace, expressive gestures, and intricate footwork")
+                | A classical dance form from Tamil Nadu, Bharatanatyam is known for its grace, expressive gestures, and intricate footwork.
+              img(src="/assets/img/Bharatanatyam.jpeg" alt="Bharatanatyam")
+            .grid-item
+              h3(data-translate-key="Kathak") Kathak
+              p(data-translate-key="Originating from North India, Kathak is characterized by its intricate footwork, spins, and expressive storytelling")
+                | Originating from North India, Kathak is characterized by its intricate footwork, spins, and expressive storytelling.
+              img(src="/assets/img/Kathak.jpeg" alt="Kathak")
+            .grid-item
+              h3(data-translate-key="Kathakali") Kathakali
+              p(data-translate-key="A classical dance-drama from Kerala, Kathakali is known for its elaborate costumes and dramatic storytelling")
+                | A classical dance-drama from Kerala, Kathakali is known for its elaborate costumes and dramatic storytelling.
+              img(src="/assets/img/Kathakali.jpeg" alt="Kathakali")
+            .grid-item
+              h3(data-translate-key="Odissi") Odissi
+              p(data-translate-key="Odissi is one of the oldest classical dance forms from Odisha, known for its beautiful body postures and lyrical movements")
+                | Odissi is one of the oldest classical dance forms from Odisha, known for its beautiful body postures and lyrical movements.
+              img(src="/assets/img/Odissi.jpeg" alt="Odissi")
+            .grid-item
+              h3(data-translate-key="Manipuri") Manipuri
+              p(data-translate-key="Originating from Manipur, Manipuri dance is known for its graceful and rhythmic movements, often depicting religious themes")
+                | Originating from Manipur, Manipuri dance is known for its graceful and rhythmic movements, often depicting religious themes.
+              img(src="/assets/img/Manipuri.jpeg" alt="Manipuri")
+            .grid-item
+              h3(data-translate-key="Mohiniyattam") Mohiniyattam
+              p(data-translate-key="This classical dance from Kerala is characterized by its graceful, feminine movements and expressive gestures")
+                | This classical dance from Kerala is characterized by its graceful, feminine movements and expressive gestures.
+              img(src="/assets/img/Mohiniyattam.jpeg" alt="Mohiniyattam")
+          button.scroll-btn.left(onclick="scrollLeftDances()") &#10094;
+          button.scroll-btn.right(onclick="scrollRightDances()") &#10095;
+          
+    include footer 
+
+    script(src="/assets/js/index.js")
+
+  

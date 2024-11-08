@@ -1,0 +1,77 @@
+/* General reset for margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Styling the body */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Centering the container and giving it some padding */
+  .container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  /* Styling the heading */
+  h1 {
+    color: #28a745; /* Green success color */
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Paragraph styling */
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    color: #555;
+  }
+  
+  /* Adding a subtle animation effect to the redirect message */
+  p:last-of-type {
+    color: #888;
+    font-size: 0.9rem;
+    animation: fade 1.5s ease-in-out infinite;
+  }
+  
+  /* Keyframes for fading effect */
+  @keyframes fade {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  /* Responsive design for mobile screens */
+  @media (max-width: 600px) {
+    .container {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  }
+  

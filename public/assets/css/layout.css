@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: black;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.after_login{
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #000;
+    padding: 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 0;
+    background-color: black;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.Alpha-logo {
+    max-width: 150px;
+    margin-left: 30px;
+}
+
+.powered-by {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.powered-by img {
+    max-width: 100px;
+    margin-left: 10px;
+}
+
+.footer-sections {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.footer-column {
+    margin-right: 40px;
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin: 5px 0;
+    perspective: 1000px; /* Added for 3D effect */
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: inline-block; 
+}
+
+.footer-column ul li a:hover {
+    color: #7f7f7f;
+    transform: translateY(-5px) translateZ(10px);
+}
+
+.footer-column.get-help {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.social-icons {
+    display: flex;
+    margin-top: 10px;
+    perspective: 1000px; 
+}
+
+.social-icons a {
+    margin-right: 10px;
+    font-size: 24px;
+    color: #fff;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: #7f7f7f;
+    transform: translateY(-5px) translateZ(10px);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.footer-column ul li a:hover,
+.social-icons a:hover {
+    animation: float 2s ease-in-out infinite;
+}

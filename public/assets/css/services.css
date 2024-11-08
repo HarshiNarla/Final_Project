@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.services-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+    /* Service link styles */
+.service-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.service-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+
+    /* Ensuring a uniform size for all blocks */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px; /* Fixed height */
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+}
+
+.service-item img {
+    width: 100%;
+    height: 180px; /* Fixed height for image */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.service-item h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6em;
+    margin: 10px 0;
+    font-weight: 500;
+    padding: 0 15px; /* Added padding for spacing */
+}
+
+.service-item p {
+    padding: 0 20px 20px;
+    font-size: 0.95em;
+    line-height: 1.6;
+    flex-grow: 1; /* Ensures paragraph takes the remaining space */
+    display: flex;
+    align-items: flex-start; /* Align text at the top of the block */
+}
+
+.service-item:hover img {
+    transform: scale(1.1);
+}
+
+    /* Media Queries */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .grid-container {
+        padding: 0 10px;
+    }
+
+    .service-item {
+        height: 320px; /* Adjust block height for smaller screens */
+    }
+
+    .service-item img {
+        height: 150px;
+    }
+
+    .service-item h2 {
+        font-size: 1.4em;
+    }
+
+    .service-item p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .service-item {
+        height: 300px; /* Adjust block height for very small screens */
+    }
+
+    .service-item img {
+        height: 130px;
+    }
+
+    .service-item h2 {
+        font-size: 1.2em;
+    }
+
+    .service-item p {
+        font-size: 0.85em;
+    }
+}

@@ -1,0 +1,12 @@
+block content-head 
+    title Thank You for Your Feedback!
+    link(rel="stylesheet", href="/assets/css/offers_thanks.css")
+
+block content-body
+    .thank-you-container
+      h1 Thank You for Your Feedback!
+      p#emailDisplay
+      p You will be redirected to the homepage in <span#countdown 5</span> seconds.
+      a(href="/user/dashboard", class="btn") Go to Home Page
+
+    script(src="/assets/js/offers_thanks.js") 
