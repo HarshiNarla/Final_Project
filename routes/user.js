@@ -62,4 +62,28 @@ router.put('/edit-profile-pic', authenticateJWT, upload.single('profile_pic'), a
   });
 });
 
+// Login route
+router.post('/', async (req, res) => {
+  const { signupEmail, signupPassword } = req.body;
+
+  try {
+    const user = await User.findOne({ signupEmail });
+    if (!user || !(await user.comparePassword(signupPassword))) {
+      return res.status(400).send('Invalid credentials');
+    }
+
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '15m' });
+    res.cookie('token', token, { httpOnly: true });
+    res.redirect('/user/dashboard');
+  } catch (err) {
+    res.status(500).send('Server error');
+  }
+});
+
+// Logout route with `clearCookie`
+router.get('/logout', (req, res) => {
+  res.cookie('token', '', { expires: new Date(0) });
+  res.redirect('/');
+});
+
 module.exports = router;
