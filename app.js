@@ -35,7 +35,7 @@ app.get("/", (req,res)=>{
   res.json("Welcome to alpha tourist assistance")
 });
 
-app.use('/signup', signupRoute);
+app.post('/signup', signupRoute);
 app.use('/login', userRoute);
 app.use('/user', userRoute);
 app.use('/flights', searchFlightRoute);
